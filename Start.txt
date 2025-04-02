@@ -1,0 +1,6 @@
+The princess of the kingdom of CPeria has been captured by an evil wizard and placed in a castle guarded by monsters.
+Your job is to set her free and bring her back outside the castle.
+The castle has 9 rooms. The game starts with you standing in room 1. Some of the rooms are linked together.
+The princess is locked in room 9. There are two monsters in the castle that need to be killed in order to reach the princess.
+Will you be able to defeat the monsters and save the princess?
+
