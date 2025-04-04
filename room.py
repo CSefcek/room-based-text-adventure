@@ -6,3 +6,6 @@ class Room:
         self.room_e = room_e
         self.room_w =room_w
         self.item = item
+
+    def describe_room(self, description):
+        print(description)

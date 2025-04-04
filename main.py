@@ -10,12 +10,10 @@ rooms_file_lines = rooms_file.readlines()
 
 
 
+
 room_1 = room.Room(False, False, True, True, False, False)
 
-if room_1 == True:
-    print("hello")
-else:
-    print(type(room_1))
+room_1.describe_room(rooms_file_lines[0])
 
 
 
