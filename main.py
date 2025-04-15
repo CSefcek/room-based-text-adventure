@@ -28,6 +28,20 @@ def move():
     
     return direction
 
+def replay_quit():
+    running = False
+    asking_to_replay = True
+    replay = input("Choose 'R' to replay or 'Q' to quit: ")
+    while asking_to_replay:
+        if replay == "R":
+            running = True
+            asking_to_replay = False
+        elif replay == "Q":
+            asking_to_replay = False
+            sys.exit()
+        else:
+            replay = input("Invalid command! Choose 'R' to replay or 'Q' to quit: ")
+
   
 
 
@@ -51,19 +65,8 @@ while running:
 
     if current_room == room_1 and direction == "MOVE WEST":
         print("GAME OVER")
-        # aggiungere quit or replay logic
-        running = False
-        asking_to_replay = True
-        replay = input("Choose 'R' to replay or 'Q' to quit: ")
-        while asking_to_replay:
-            if replay == "R":
-                running = True
-                asking_to_replay = False
-            elif replay == "Q":
-                asking_to_replay = False
-                sys.exit()
-            else:
-                replay = input("Invalid command! Choose 'R' to replay or 'Q' to quit: ")
+        replay_quit()
+        
 
     elif current_room == room_1 and direction == "MOVE EAST":
         print("You are in room 2!")
