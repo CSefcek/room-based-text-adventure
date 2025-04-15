@@ -1,3 +1,4 @@
+import sys
 import room
 
 with open('Start.txt') as intro_file:
@@ -8,12 +9,38 @@ with open('Start.txt') as intro_file:
 rooms_file = open('Rooms.txt')
 rooms_file_lines = rooms_file.readlines()
 
+running = True
 
+def move():
+    direction = input("What do you want to do: ")
+    if direction == "MOVE WEST":
+        print("You moved west!")
+    elif direction == "MOVE EAST":
+        print("You moved east!")
+    elif direction == "MOVE NORTH":
+        print("You moved north!")
+    elif direction == "MOVE SOUTH":
+        print("You moved south!")
+    elif direction == "Q":
+        sys.exit()
+    else:
+        print("You didn't move!")
+    
+    return direction
+
+  
 
 
 room_1 = room.Room(False, False, True, True, False, False)
 
 room_1.describe_room(rooms_file_lines[0])
+
+
+while running:
+    direction = move()
+
+
+
 
 
 
