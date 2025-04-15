@@ -31,13 +31,46 @@ def move():
   
 
 
-room_1 = room.Room(False, False, True, True, False, False)
+room_1 = room.Room(True, False, True, True, False, False)
+room_2 = room.Room(False, False, True, True, True, True)
+room_3 = room.Room(False, False, False, False, True, True)
+room_4 = room.Room(False, True, False, False, False, True)
+room_5 = room.Room(False, True, True, True, False, False)
+room_6 = room.Room(False, False, True, False, True, False)
+room_7 = room.Room(False, False, False, True, False, True)
+room_8 = room.Room(False, True, False, False, True, True)
+room_9 = room.Room(False, True, False, False, False, False)
+
+current_room = room_1
 
 room_1.describe_room(rooms_file_lines[0])
 
 
 while running:
     direction = move()
+
+    if current_room == room_1 and direction == "MOVE WEST":
+        print("GAME OVER")
+        # aggiungere quit or replay logic
+        running = False
+        asking_to_replay = True
+        replay = input("Choose 'R' to replay or 'Q' to quit: ")
+        while asking_to_replay:
+            if replay == "R":
+                running = True
+                asking_to_replay = False
+            elif replay == "Q":
+                asking_to_replay = False
+                sys.exit()
+            else:
+                replay = input("Invalid command! Choose 'R' to replay or 'Q' to quit: ")
+
+    elif current_room == room_1 and direction == "MOVE EAST":
+        print("You are in room 2!")
+    elif current_room == room_1 and direction == "MOVE NORTH":
+        print("You hit a wall!")
+    elif current_room == room_1 and direction == "MOVE SOUTH":
+        print("You are in room 4!")
 
 
 
