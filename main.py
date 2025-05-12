@@ -63,17 +63,40 @@ room_1.describe_room(rooms_file_lines[0])
 while running:
     direction = move()
 
+    # Room 1 conditional logic
     if current_room == room_1 and direction == "MOVE WEST":
         print("GAME OVER")
-        replay_quit()
-        
-
+        replay_quit()       
     elif current_room == room_1 and direction == "MOVE EAST":
-        print("You are in room 2!")
+        current_room = room_2
+        room_2.describe_room(rooms_file_lines[1])
+        
     elif current_room == room_1 and direction == "MOVE NORTH":
         print("You hit a wall!")
     elif current_room == room_1 and direction == "MOVE SOUTH":
-        print("You are in room 4!")
+        current_room = room_4
+        room_4.describe_room(rooms_file_lines[3])
+
+
+    # Room 2 conditional logic
+    elif current_room == room_2 and direction == "MOVE WEST":
+        current_room == room_1
+        room_1.describe_room(rooms_file_lines[0])
+
+        # !!! Issue: once in room 1 by moving west again it's not game over
+        # it seems the first conditional in Room1 conditional logic is not executed
+    elif current_room == room_2 and direction == "MOVE EAST":
+        current_room == room_3
+        room_3.describe_room(rooms_file_lines[2])
+    elif current_room == room_2 and direction == "MOVE NORTH":
+        print("You hit a wall!")
+    elif current_room == room_2 and direction == "MOVE SOUTH":
+        print("You hit a wall!")
+
+    
+        
+
+    
 
 
 
